@@ -8,7 +8,6 @@ public class Timsort {
         int[] arr = {64, 34, 25, 12, 22, 11, 90};
         System.out.println("Array before sorting: " + Arrays.toString(arr));
 
-        // Perform Timsort
         timsort(arr, arr.length);
 
         System.out.println("Array after sorting: " + Arrays.toString(arr));
@@ -52,8 +51,7 @@ public class Timsort {
     }
 
     public static void merge(int[] arr, int left, int mid, int right) {
-        // Merge two subarrays arr[left...mid] and arr[mid+1...right]
-        // Implement your merging logic here
+        // algo mta3 l merge
     }
 
     public static int minRunLength(int n) {
