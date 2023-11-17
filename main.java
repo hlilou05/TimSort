@@ -1,6 +1,6 @@
 import java.util.Arrays;
 
-public class Timsort {
+public class main {
 
     private static final int MIN_MERGE = 32;
 
@@ -51,8 +51,52 @@ public class Timsort {
     }
 
     public static void merge(int[] arr, int left, int mid, int right) {
-        // algo mta3 l merge
-    }
+            int n1 = mid - left + 1;
+            int n2 = right - mid;
+    
+            // Create temporary arrays
+            int[] leftArr = new int[n1];
+            int[] rightArr = new int[n2];
+    
+            // Copy data to temporary arrays leftArr[] and rightArr[]
+            for (int i = 0; i < n1; i++) {
+                leftArr[i] = arr[left + i];
+            }
+            for (int j = 0; j < n2; j++) {
+                rightArr[j] = arr[mid + 1 + j];
+            }
+    
+            // Merge the temporary arrays
+    
+            int i = 0, j = 0;
+            int k = left;
+    
+            while (i < n1 && j < n2) {
+                if (leftArr[i] <= rightArr[j]) {
+                    arr[k] = leftArr[i];
+                    i++;
+                } else {
+                    arr[k] = rightArr[j];
+                    j++;
+                }
+                k++;
+            }
+    
+            // Copy the remaining elements of leftArr[], if there are any
+            while (i < n1) {
+                arr[k] = leftArr[i];
+                i++;
+                k++;
+            }
+    
+            // Copy the remaining elements of rightArr[], if there are any
+            while (j < n2) {
+                arr[k] = rightArr[j];
+                j++;
+                k++;
+            }
+        }
+    
 
     public static int minRunLength(int n) {
         int r = 0;
